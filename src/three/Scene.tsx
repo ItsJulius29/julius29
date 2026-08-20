@@ -64,7 +64,7 @@ function PhotoCutout() {
     const { x, y } = scrollState.pointer
     const t = state.clock.elapsedTime
 
-    groupRef.current.position.y = FRAME_BASE_Y - height * 0.28 - exit * 5 + Math.sin(t * 0.6) * 0.06
+    groupRef.current.position.y = FRAME_BASE_Y - height * 0.28 + exit * 5 + Math.sin(t * 0.6) * 0.06
     groupRef.current.position.x = x * 0.45
     groupRef.current.rotation.y = x * 0.35
     groupRef.current.rotation.x = -y * 0.18
