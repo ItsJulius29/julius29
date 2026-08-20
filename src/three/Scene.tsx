@@ -1,4 +1,4 @@
-import { Suspense, useMemo, useRef } from "react"
+import { Suspense, useEffect, useMemo, useRef } from "react"
 import { Canvas, useFrame, useLoader } from "@react-three/fiber"
 import * as THREE from "three"
 import { scrollState } from "./scrollState"
@@ -68,8 +68,11 @@ function CenterpieceShape() {
 // al scroll (sale de cuadro) y al puntero (leve paralaje 3D).
 function PhotoCutout() {
   const groupRef = useRef<THREE.Group>(null)
-  const texture = useLoader(THREE.TextureLoader, "/foto-3d.webp")
-  texture.colorSpace = THREE.SRGBColorSpace
+  const texture = useLoader(THREE.TextureLoader, `${import.meta.env.BASE_URL}foto-3d.webp`)
+
+  useEffect(() => {
+    texture.colorSpace = THREE.SRGBColorSpace
+  }, [texture])
 
   const aspect = texture.image ? texture.image.width / texture.image.height : 0.5
   const height = isMobile ? 3.4 : 4.3

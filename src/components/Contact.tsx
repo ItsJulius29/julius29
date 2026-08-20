@@ -22,12 +22,12 @@ export default function Contact() {
             </a>
           )}
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
               {t("contact.linkedin")}
             </a>
           )}
           {github && (
-            <a href={github} target="_blank" rel="noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
+            <a href={github} target="_blank" rel="noopener noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
               {t("contact.github")}
             </a>
           )}
