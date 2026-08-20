@@ -29,7 +29,11 @@ export function useScrollProgress() {
         const rect = el.getBoundingClientRect()
         const center = rect.top + rect.height / 2
         const delta = Math.abs(center - vh / 2)
-        scrollState.sections[id] = Math.max(0, 1 - delta / (vh * 0.75))
+        // Ventana de fundido más angosta (antes 0.75) para que la figura de
+        // una sección esté prácticamente fuera antes de que entre la
+        // siguiente — antes se alcanzaban a ver dos encimadas cuando dos
+        // secciones eran cortas y quedaban cerca (ej. Educación/Contacto).
+        scrollState.sections[id] = Math.max(0, 1 - delta / (vh * 0.4))
       }
     }
 

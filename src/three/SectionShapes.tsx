@@ -29,7 +29,7 @@ function WireframeShape({
     meshRef.current.rotation.y += delta * 0.24 * speed
     meshRef.current.scale.setScalar(0.7 + v * 0.5)
     const material = meshRef.current.material as THREE.MeshBasicMaterial
-    material.opacity = 0.55 * v
+    material.opacity = 0.4 * v
   })
 
   const detail = isMobile ? 0 : 1
@@ -39,8 +39,8 @@ function WireframeShape({
       {kind === "icosahedron" && <icosahedronGeometry args={[2, detail]} />}
       {kind === "octahedron" && <octahedronGeometry args={[2.1, detail]} />}
       {kind === "dodecahedron" && <dodecahedronGeometry args={[1.9, detail]} />}
-      {kind === "torus" && <torusGeometry args={[1.7, 0.55, 12, isMobile ? 24 : 48]} />}
-      {kind === "torusKnot" && <torusKnotGeometry args={[1.4, 0.4, isMobile ? 64 : 128, 16]} />}
+      {kind === "torus" && <torusGeometry args={[1.7, 0.55, 8, isMobile ? 16 : 28]} />}
+      {kind === "torusKnot" && <torusKnotGeometry args={[1.4, 0.4, isMobile ? 48 : 90, 10]} />}
       {kind === "sphere" && <sphereGeometry args={[2, isMobile ? 12 : 20, isMobile ? 10 : 16]} />}
       <meshBasicMaterial color={color} wireframe transparent opacity={0} />
     </mesh>
@@ -72,7 +72,7 @@ function StarCluster({ sectionId, color }: { sectionId: string; color: string })
     pointsRef.current.rotation.y += delta * 0.1
     pointsRef.current.scale.setScalar(0.8 + v * 0.4)
     const material = pointsRef.current.material as THREE.PointsMaterial
-    material.opacity = 0.9 * v
+    material.opacity = 0.7 * v
   })
 
   return (

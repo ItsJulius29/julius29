@@ -17,17 +17,17 @@ export default function Contact() {
       {hasContact ? (
         <div ref={ref} className="flex flex-wrap justify-center gap-4 mt-8">
           {email && (
-            <a href={`mailto:${email}`} className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
+            <a href={`mailto:${email}`} className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
               {t("contact.email")}
             </a>
           )}
           {linkedin && (
-            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
+            <a href={linkedin} target="_blank" rel="noopener noreferrer" className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
               {t("contact.linkedin")}
             </a>
           )}
           {github && (
-            <a href={github} target="_blank" rel="noopener noreferrer" className="rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
+            <a href={github} target="_blank" rel="noopener noreferrer" className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
               {t("contact.github")}
             </a>
           )}
