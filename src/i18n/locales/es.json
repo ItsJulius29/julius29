@@ -25,7 +25,9 @@
     "title": "Habilidades"
   },
   "projects": {
-    "title": "Proyectos"
+    "title": "Proyectos",
+    "live": "Ver proyecto",
+    "code": "Código"
   },
   "certifications": {
     "title": "Certificaciones"

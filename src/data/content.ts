@@ -218,17 +218,33 @@ export const skills: { category: Bilingual; items: string[] }[] = [
 export type Project = {
   title: string
   description: Bilingual
-  // Ruta a la miniatura en /public, ej. "/projects/mi-proyecto.jpg"
+  // Ruta a la miniatura dentro de /public, SIN slash inicial (ej.
+  // "projects/mi-proyecto.jpg") — Projects.tsx le antepone el BASE_URL
+  // del sitio; con slash inicial se rompe en GitHub Pages (project page).
   image: string
+  // Demo en vivo (obligatorio) y repo de código (opcional, si es público).
   link: string
+  repo?: string
   tags?: string[]
 }
 
-// Vacío por ahora — la sección "Proyectos" solo aparece (en el nav y en
-// la página) cuando este array tiene al menos un elemento. Para agregar
-// uno, solo añade un objeto aquí, sin tocar ningún componente:
-// { title: "...", description: { es: "...", en: "..." }, image: "/projects/....jpg", link: "https://...", tags: ["React"] }
-export const projects: Project[] = []
+// La sección "Proyectos" solo aparece (en el nav y en la página) cuando
+// este array tiene al menos un elemento. Para agregar uno más, solo
+// añade un objeto aquí, sin tocar ningún componente:
+// { title: "...", description: { es: "...", en: "..." }, image: "projects/....jpg", link: "https://...", repo: "https://github.com/...", tags: ["React"] }
+export const projects: Project[] = [
+  {
+    title: "SubTrack",
+    description: {
+      es: "Dashboard para el seguimiento de suscripciones y renovaciones: resumen de gasto mensual, alertas de vencimiento y centro de notificaciones, con soporte bilingüe y tema claro/oscuro.",
+      en: "Dashboard for tracking subscriptions and renewals: monthly spend summary, expiration alerts, and a notification center, with bilingual support and light/dark theme.",
+    },
+    image: "projects/subtrack.jpg",
+    link: "https://itsjulius29.github.io/subtrack/",
+    repo: "https://github.com/ItsJulius29/subtrack",
+    tags: ["React", "TypeScript", "TanStack Query", "Vitest", "Playwright", "Tailwind CSS"],
+  },
+]
 
 export type CertGroup = { category: Bilingual; items: string[] }
 

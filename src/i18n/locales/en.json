@@ -25,7 +25,9 @@
     "title": "Skills"
   },
   "projects": {
-    "title": "Projects"
+    "title": "Projects",
+    "live": "View project",
+    "code": "Code"
   },
   "certifications": {
     "title": "Certifications"

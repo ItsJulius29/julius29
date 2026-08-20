@@ -18,25 +18,23 @@ export default function Projects() {
 
       <div ref={ref} className="grid sm:grid-cols-2 gap-6">
         {projects.map((project) => (
-          <a
+          <div
             key={project.title}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
             className="glass rounded-2xl overflow-hidden group hover:border-accent/50 border border-transparent transition-colors"
           >
-            <div className="aspect-video overflow-hidden bg-surface">
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="block aspect-video overflow-hidden bg-surface">
               <img
-                src={project.image}
+                src={`${import.meta.env.BASE_URL}${project.image}`}
                 alt={project.title}
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
               />
-            </div>
+            </a>
             <div className="p-5">
               <h3 className="font-display font-semibold mb-1">{project.title}</h3>
               <p className="text-muted text-sm mb-3">{pick(project.description)}</p>
+
               {project.tags && (
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span key={tag} className="text-xs px-2.5 py-1 rounded-full border border-white/10 text-muted">
                       {tag}
@@ -44,8 +42,19 @@ export default function Projects() {
                   ))}
                 </div>
               )}
+
+              <div className="flex gap-4 text-sm">
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+                  {t("projects.live")} ↗
+                </a>
+                {project.repo && (
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-accent hover:underline transition-colors">
+                    {t("projects.code")} ↗
+                  </a>
+                )}
+              </div>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </section>
