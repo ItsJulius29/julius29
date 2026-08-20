@@ -8,15 +8,8 @@ export default function Hero() {
 
   return (
     <section id="hero" className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
-      <div className="w-28 h-28 md:w-36 md:h-36 rounded-full mb-8 border-2 border-accent/60 overflow-hidden bg-surface flex items-center justify-center">
-        {profile.photo ? (
-          <img src={profile.photo} alt={profile.name} className="w-full h-full object-cover" />
-        ) : (
-          <span className="text-4xl font-display font-bold text-gradient">
-            {profile.alias.charAt(0)}
-          </span>
-        )}
-      </div>
+      {/* Espacio reservado: la foto vive en el canvas 3D de fondo (Scene.tsx) */}
+      <div className="h-64 md:h-80" aria-hidden="true" />
 
       <p className="text-accent font-medium tracking-widest text-xs md:text-sm uppercase mb-4">
         {pick(profile.role)}

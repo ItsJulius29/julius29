@@ -28,7 +28,6 @@ export const profile = {
     linkedin: "",
     github: "",
   },
-  photo: "/foto-perfil.jpg",
 }
 
 export type Role = {

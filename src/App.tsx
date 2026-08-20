@@ -9,9 +9,11 @@ import Education from "./components/Education"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import { useScrollProgress } from "./hooks/useScrollProgress"
+import { usePointerParallax } from "./hooks/usePointerParallax"
 
 function App() {
   useScrollProgress()
+  usePointerParallax()
 
   return (
     <>

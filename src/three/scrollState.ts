@@ -3,4 +3,6 @@
 // Evita re-renders de React en cada tick de scroll.
 export const scrollState = {
   progress: 0,
+  heroExit: 0,
+  pointer: { x: 0, y: 0 },
 }
