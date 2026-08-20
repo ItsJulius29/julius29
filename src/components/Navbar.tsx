@@ -1,16 +1,7 @@
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
-import { profile, projects } from "../data/content"
-
-const sections = [
-  "about",
-  "experience",
-  "skills",
-  ...(projects.length > 0 ? (["projects"] as const) : []),
-  "certifications",
-  "education",
-  "contact",
-] as const
+import { profile } from "../data/content"
+import { sectionIds as sections } from "../data/sections"
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()

@@ -1,4 +1,4 @@
-import Scene from "./three/Scene"
+import { lazy, Suspense } from "react"
 import Navbar from "./components/Navbar"
 import Hero from "./components/Hero"
 import About from "./components/About"
@@ -9,8 +9,13 @@ import Certifications from "./components/Certifications"
 import Education from "./components/Education"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
+import SectionDots from "./components/SectionDots"
 import { useScrollProgress } from "./hooks/useScrollProgress"
 import { usePointerParallax } from "./hooks/usePointerParallax"
+
+// Three.js (~1.1MB) va en su propio chunk: el HTML/texto puede pintar
+// de inmediato sin esperar a que se descargue la escena 3D.
+const Scene = lazy(() => import("./three/Scene"))
 
 function App() {
   useScrollProgress()
@@ -18,8 +23,11 @@ function App() {
 
   return (
     <>
-      <Scene />
+      <Suspense fallback={null}>
+        <Scene />
+      </Suspense>
       <Navbar />
+      <SectionDots />
       <main className="relative z-10">
         <Hero />
         <About />

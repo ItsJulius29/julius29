@@ -2,10 +2,9 @@ import { useEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { scrollState } from "../three/scrollState"
+import { sectionIds } from "../data/sections"
 
 gsap.registerPlugin(ScrollTrigger)
-
-const SECTION_IDS = ["about", "experience", "skills", "projects", "certifications", "education", "contact"]
 
 // Mantiene sincronizados los valores que la escena 3D lee en su render
 // loop (evita re-renders de React en cada tick de scroll):
@@ -23,7 +22,7 @@ export function useScrollProgress() {
 
     const updateSectionVisibility = () => {
       const vh = window.innerHeight
-      for (const id of SECTION_IDS) {
+      for (const id of sectionIds) {
         const el = document.getElementById(id)
         if (!el) continue
         const rect = el.getBoundingClientRect()
