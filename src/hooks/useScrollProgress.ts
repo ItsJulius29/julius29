@@ -5,7 +5,7 @@ import { scrollState } from "../three/scrollState"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const SECTION_IDS = ["about", "experience", "skills", "certifications", "education", "contact"]
+const SECTION_IDS = ["about", "experience", "skills", "projects", "certifications", "education", "contact"]
 
 // Mantiene sincronizados los valores que la escena 3D lee en su render
 // loop (evita re-renders de React en cada tick de scroll):

@@ -11,7 +11,7 @@ export default function Certifications() {
   return (
     <section id="certifications" className="max-w-3xl mx-auto px-6 py-28 md:py-36">
       <h2 className="font-display font-bold text-2xl md:text-3xl mb-12">
-        <span className="text-gradient">04.</span> {t("certifications.title")}
+        <span className="text-gradient">05.</span> {t("certifications.title")}
       </h2>
 
       <div ref={ref} className="grid sm:grid-cols-2 gap-6">

@@ -3,6 +3,7 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "skills": "Habilidades",
+    "projects": "Proyectos",
     "certifications": "Certificaciones",
     "education": "Educación",
     "contact": "Contacto"
@@ -19,6 +20,9 @@
   },
   "skills": {
     "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Proyectos"
   },
   "certifications": {
     "title": "Certificaciones"

@@ -11,7 +11,7 @@ export default function Education() {
   return (
     <section id="education" className="max-w-3xl mx-auto px-6 py-28 md:py-36">
       <h2 className="font-display font-bold text-2xl md:text-3xl mb-12">
-        <span className="text-gradient">05.</span> {t("education.title")}
+        <span className="text-gradient">06.</span> {t("education.title")}
       </h2>
 
       <div ref={ref} className="space-y-4">

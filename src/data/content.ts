@@ -22,10 +22,9 @@ export const profile = {
     es: "Ingeniero de Sistemas Computacionales egresado, con bachiller en Ingeniería de Sistemas, perteneciente al tercio superior, en búsqueda de una oportunidad laboral para analizar y resolver problemas. Aplico el trabajo en equipo siendo responsable y proactivo, con pasión por hacer las cosas bien y ganas constantes de seguir aprendiendo para entregar resultados. Analizo problemas y doy opciones de solución, usando herramientas que ayuden a encontrar la causa raíz, generando un plan de acción inmediato y otro sistémico para que no vuelva a suceder.",
     en: "Computer Systems Engineering graduate with a bachelor's degree, top-third academic standing, looking for an opportunity to analyze and solve problems. I work in teams with responsibility and initiative, with a passion for doing things right and a constant drive to keep learning and deliver results. I analyze problems and propose solutions using tools that help find the root cause, building both an immediate action plan and a systemic one so it doesn't happen again.",
   } satisfies Bilingual,
-  // TODO: agrega tu correo, LinkedIn, GitHub u otro contacto que quieras hacer público.
   contact: {
-    email: "",
-    linkedin: "",
+    email: "julio_campos159@outlook.es",
+    linkedin: "https://www.linkedin.com/in/julio-gustavo-campos-yerrén-034080248",
     github: "",
   },
 }
@@ -192,6 +191,21 @@ export const skills: { category: Bilingual; items: string[] }[] = [
     items: ["Scrum", "Kanban", "Agile"],
   },
 ]
+
+export type Project = {
+  title: string
+  description: Bilingual
+  // Ruta a la miniatura en /public, ej. "/projects/mi-proyecto.jpg"
+  image: string
+  link: string
+  tags?: string[]
+}
+
+// Vacío por ahora — la sección "Proyectos" solo aparece (en el nav y en
+// la página) cuando este array tiene al menos un elemento. Para agregar
+// uno, solo añade un objeto aquí, sin tocar ningún componente:
+// { title: "...", description: { es: "...", en: "..." }, image: "/projects/....jpg", link: "https://...", tags: ["React"] }
+export const projects: Project[] = []
 
 export type CertGroup = { category: Bilingual; items: string[] }
 

@@ -11,7 +11,7 @@ export default function Contact() {
   return (
     <section id="contact" className="max-w-3xl mx-auto px-6 py-28 md:py-40 text-center">
       <h2 className="font-display font-bold text-2xl md:text-3xl mb-6">
-        <span className="text-gradient">06.</span> {t("contact.title")}
+        <span className="text-gradient">07.</span> {t("contact.title")}
       </h2>
 
       {hasContact ? (

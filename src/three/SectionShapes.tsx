@@ -5,7 +5,7 @@ import { scrollState } from "./scrollState"
 
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768
 
-type WireframeKind = "icosahedron" | "torusKnot" | "octahedron" | "dodecahedron" | "torus"
+type WireframeKind = "icosahedron" | "torusKnot" | "octahedron" | "dodecahedron" | "torus" | "sphere"
 
 // Una figura wireframe genérica que aparece/desaparece según qué tan
 // visible esté su sección (scrollState.sections[sectionId]).
@@ -41,6 +41,7 @@ function WireframeShape({
       {kind === "dodecahedron" && <dodecahedronGeometry args={[1.9, detail]} />}
       {kind === "torus" && <torusGeometry args={[1.7, 0.55, 12, isMobile ? 24 : 48]} />}
       {kind === "torusKnot" && <torusKnotGeometry args={[1.4, 0.4, isMobile ? 64 : 128, 16]} />}
+      {kind === "sphere" && <sphereGeometry args={[2, isMobile ? 12 : 20, isMobile ? 10 : 16]} />}
       <meshBasicMaterial color={color} wireframe transparent opacity={0} />
     </mesh>
   )
@@ -93,6 +94,7 @@ export default function SectionShapes() {
       <WireframeShape sectionId="about" kind="icosahedron" color="#a855f7" />
       <WireframeShape sectionId="experience" kind="torusKnot" color="#22d3ee" speed={0.7} />
       <WireframeShape sectionId="skills" kind="octahedron" color="#a855f7" speed={1.2} />
+      <WireframeShape sectionId="projects" kind="sphere" color="#22d3ee" speed={0.5} />
       <StarCluster sectionId="certifications" color="#22d3ee" />
       <WireframeShape sectionId="education" kind="dodecahedron" color="#a855f7" speed={0.9} />
       <WireframeShape sectionId="contact" kind="torus" color="#22d3ee" speed={1.1} />

@@ -3,6 +3,7 @@
     "about": "About",
     "experience": "Experience",
     "skills": "Skills",
+    "projects": "Projects",
     "certifications": "Certifications",
     "education": "Education",
     "contact": "Contact"
@@ -19,6 +20,9 @@
   },
   "skills": {
     "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects"
   },
   "certifications": {
     "title": "Certifications"
