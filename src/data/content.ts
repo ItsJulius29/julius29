@@ -28,9 +28,7 @@ export const profile = {
     linkedin: "",
     github: "",
   },
-  // TODO: aún no tengo el archivo de la foto en disco — en cuanto me pases
-  // la ruta la copio a /public y pongo aquí "/foto-perfil.jpg".
-  photo: "",
+  photo: "/foto-perfil.jpg",
 }
 
 export type Role = {

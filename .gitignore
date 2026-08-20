@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Foto original sin procesar (pesada) — la versión optimizada vive en public/
+/FotoJulioCampos.jpeg
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
