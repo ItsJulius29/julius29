@@ -82,10 +82,10 @@ function PhotoCutout() {
     const t = state.clock.elapsedTime
 
     groupRef.current.position.y = FRAME_BASE_Y - height * 0.28 - exit * 5 + Math.sin(t * 0.6) * 0.06
-    groupRef.current.position.x = x * 0.25
-    groupRef.current.rotation.y = x * 0.18
-    groupRef.current.rotation.x = -y * 0.1
-    groupRef.current.rotation.z = x * -0.03
+    groupRef.current.position.x = x * 0.45
+    groupRef.current.rotation.y = x * 0.35
+    groupRef.current.rotation.x = -y * 0.18
+    groupRef.current.rotation.z = x * -0.05
 
     const material = (groupRef.current.children[0] as THREE.Mesh).material as THREE.MeshBasicMaterial
     material.opacity = Math.max(0, 1 - exit * 1.4)
