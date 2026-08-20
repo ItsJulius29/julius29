@@ -11,6 +11,16 @@ export default function Hero() {
       {/* Espacio reservado: la foto vive en el canvas 3D de fondo (Scene.tsx) */}
       <div className="h-64 md:h-80" aria-hidden="true" />
 
+      {profile.availability.open && (
+        <span className="inline-flex items-center gap-2 rounded-full glass border border-white/10 px-3.5 py-1.5 text-xs text-muted mb-5">
+          <span className="relative flex w-2 h-2">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+            <span className="relative inline-flex w-2 h-2 rounded-full bg-green-400" />
+          </span>
+          {pick(profile.availability.label)}
+        </span>
+      )}
+
       <p className="text-accent font-medium tracking-widest text-xs md:text-sm uppercase mb-4">
         {pick(profile.role)}
       </p>

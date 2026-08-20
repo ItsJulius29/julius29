@@ -13,7 +13,10 @@
     "scroll": "Desliza para explorar"
   },
   "about": {
-    "title": "Sobre mí"
+    "title": "Sobre mí",
+    "statsYears": "años de experiencia",
+    "statsRoles": "ciclos en Entelgy",
+    "statsCerts": "certificaciones"
   },
   "experience": {
     "title": "Experiencia profesional"
@@ -35,8 +38,19 @@
     "title": "Contacto",
     "pending": "Datos de contacto próximamente.",
     "email": "Correo",
+    "copied": "¡Copiado! ✓",
     "linkedin": "LinkedIn",
     "github": "GitHub"
+  },
+  "terminal": {
+    "welcome": "Bienvenido a mi mini terminal. Escribe \"help\" para empezar.",
+    "prompt": "escribe un comando...",
+    "help": "Comandos disponibles: whoami, skills, contact, clear",
+    "notFound": "comando no encontrado: {{cmd}} — escribe \"help\"",
+    "easterEgg": "🎉 ¡Contrátenme! (encontraste el easter egg del terminal)"
+  },
+  "easterEgg": {
+    "found": "🎉 ¡Encontraste el easter egg! Código Konami activado."
   },
   "footer": {
     "rights": "Todos los derechos reservados."

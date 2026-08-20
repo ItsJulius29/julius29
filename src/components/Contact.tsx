@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useRevealOnScroll } from "../hooks/useRevealOnScroll"
 import { profile } from "../data/content"
@@ -7,6 +8,17 @@ export default function Contact() {
   const ref = useRevealOnScroll<HTMLDivElement>()
   const { email, linkedin, github } = profile.contact
   const hasContact = email || linkedin || github
+  const [copied, setCopied] = useState(false)
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 2000)
+    } catch {
+      window.location.href = `mailto:${email}`
+    }
+  }
 
   return (
     <section id="contact" className="max-w-3xl mx-auto px-6 py-28 md:py-40 text-center">
@@ -17,9 +29,12 @@ export default function Contact() {
       {hasContact ? (
         <div ref={ref} className="flex flex-wrap justify-center gap-4 mt-8">
           {email && (
-            <a href={`mailto:${email}`} className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">
-              {t("contact.email")}
-            </a>
+            <button
+              onClick={copyEmail}
+              className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors cursor-pointer"
+            >
+              {copied ? t("contact.copied") : t("contact.email")}
+            </button>
           )}
           {linkedin && (
             <a href={linkedin} target="_blank" rel="noopener noreferrer" className="glass rounded-full px-5 py-2.5 border border-white/15 text-sm hover:border-accent hover:text-accent transition-colors">

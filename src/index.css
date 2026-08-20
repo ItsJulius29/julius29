@@ -48,3 +48,21 @@
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 }
+
+/* Cursor propio (CustomCursor.tsx): oculta el del sistema solo cuando el
+   componente confirmó que hay un puntero fino (mouse), nunca en touch. */
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button,
+body.custom-cursor-active input {
+  cursor: none;
+}
+
+/* Easter egg del código Konami (useKonamiCode + App.tsx) */
+@keyframes party-hue {
+  0%, 100% { filter: hue-rotate(0deg) saturate(1); }
+  50% { filter: hue-rotate(180deg) saturate(1.6); }
+}
+body.party-mode {
+  animation: party-hue 1s ease-in-out infinite;
+}

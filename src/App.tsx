@@ -10,6 +10,9 @@ import Education from "./components/Education"
 import Contact from "./components/Contact"
 import Footer from "./components/Footer"
 import SectionDots from "./components/SectionDots"
+import ScrollProgressBar from "./components/ScrollProgressBar"
+import CustomCursor from "./components/CustomCursor"
+import EasterEgg from "./components/EasterEgg"
 import { useScrollProgress } from "./hooks/useScrollProgress"
 import { usePointerParallax } from "./hooks/usePointerParallax"
 
@@ -26,6 +29,9 @@ function App() {
       <Suspense fallback={null}>
         <Scene />
       </Suspense>
+      <ScrollProgressBar />
+      <CustomCursor />
+      <EasterEgg />
       <Navbar />
       <SectionDots />
       <main className="relative z-10">

@@ -27,7 +27,23 @@ export const profile = {
     linkedin: "https://www.linkedin.com/in/julio-gustavo-campos-yerrén-034080248",
     github: "",
   },
+  // Cambia a false para ocultar el chip de disponibilidad en el Hero.
+  availability: {
+    open: true,
+    label: { es: "Disponible para nuevas oportunidades", en: "Open to new opportunities" } satisfies Bilingual,
+  },
 }
+
+// Hitos rápidos de la carrera, del más antiguo al más reciente — se
+// muestran como una línea de tiempo compacta antes del detalle de
+// experiencia.
+export const timeline: { year: string; label: Bilingual }[] = [
+  { year: "2021", label: { es: "Atento — Teleoperador de ventas", en: "Atento — Sales telemarketer" } },
+  { year: "2022", label: { es: "Bembos — Producción", en: "Bembos — Production" } },
+  { year: "2024", label: { es: "Entelgy — Formación FrontEnd", en: "Entelgy — Frontend training" } },
+  { year: "2024", label: { es: "Outlier — Entrenamiento de IA", en: "Outlier — AI training" } },
+  { year: "2026", label: { es: "Bachiller en Ingeniería de Sistemas", en: "Bachelor's in Systems Engineering" } },
+]
 
 export type Role = {
   title: Bilingual
@@ -41,6 +57,9 @@ export type Role = {
 export type ExperienceGroup = {
   company: string
   period: string
+  // Resumen tipo "case study" (problema → qué hice → resultado), síntesis
+  // de los logros ya listados abajo — no agrega datos nuevos.
+  impact?: Bilingual
   roles: Role[]
 }
 
@@ -49,6 +68,10 @@ export const experience: ExperienceGroup[] = [
   {
     company: "Entelgy",
     period: "12/2024 — Actualidad",
+    impact: {
+      es: "Empecé corrigiendo incidencias recurrentes en el flujo de una feature ya existente. De ahí pasé a construir, desde cero, la lógica y maquetación de un dashboard nuevo: integraciones con Data Managers, notificaciones de vencimiento y mantenimiento, y la suite de tests que lo sostiene con 100% de cobertura.",
+      en: "I started by fixing recurring incidents in an existing feature's flow. From there I moved to building, from scratch, the logic and layout of a new dashboard: Data Manager integrations, expiration and maintenance notifications, and the test suite that backs it with 100% coverage.",
+    },
     roles: [
       {
         title: { es: "Analista Programador FrontEnd", en: "Frontend Software Analyst" },
