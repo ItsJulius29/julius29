@@ -2,6 +2,7 @@ import { Suspense, useEffect, useMemo, useRef } from "react"
 import { Canvas, useFrame, useLoader } from "@react-three/fiber"
 import * as THREE from "three"
 import { scrollState } from "./scrollState"
+import SectionShapes from "./SectionShapes"
 
 const isMobile = typeof window !== "undefined" && window.innerWidth < 768
 
@@ -22,11 +23,12 @@ function ParticleField() {
     return arr
   }, [count])
 
-  useFrame((_, delta) => {
+  useFrame((state, delta) => {
     if (!pointsRef.current) return
     const p = scrollState.progress
     pointsRef.current.rotation.y += delta * 0.03
     pointsRef.current.rotation.x = p * Math.PI * 0.5
+    state.camera.position.z = 8 - p * 2
   })
 
   return (
@@ -41,31 +43,9 @@ function ParticleField() {
 
 const FRAME_BASE_Y = 1.5
 
-function CenterpieceShape() {
-  const meshRef = useRef<THREE.Mesh>(null)
-
-  useFrame((state, delta) => {
-    if (!meshRef.current) return
-    const exit = scrollState.heroExit
-    meshRef.current.rotation.x += delta * 0.15
-    meshRef.current.rotation.y += delta * 0.22
-    meshRef.current.position.y = FRAME_BASE_Y - exit * 6
-    meshRef.current.scale.setScalar(1 + exit * 0.4)
-    const material = meshRef.current.material as THREE.MeshBasicMaterial
-    material.opacity = 0.6 * (1 - exit)
-    state.camera.position.z = 8 - scrollState.progress * 2
-  })
-
-  return (
-    <mesh ref={meshRef} position={[0, FRAME_BASE_Y, 0]}>
-      <icosahedronGeometry args={[2.1, isMobile ? 0 : 1]} />
-      <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.6} />
-    </mesh>
-  )
-}
-
-// Foto de perfil sin fondo, flotando como plano en la escena — reacciona
-// al scroll (sale de cuadro) y al puntero (leve paralaje 3D).
+// Foto de perfil sin fondo, flotando como plano en la escena — nada detrás
+// (el marco de icosaedro ahora pertenece a la sección "Sobre mí"). Sale de
+// cuadro con el scroll y reacciona al puntero con un leve paralaje 3D.
 function PhotoCutout() {
   const groupRef = useRef<THREE.Group>(null)
   const texture = useLoader(THREE.TextureLoader, `${import.meta.env.BASE_URL}foto-3d.webp`)
@@ -113,8 +93,8 @@ export default function Scene() {
       style={{ position: "fixed", inset: 0, zIndex: -10, pointerEvents: "none" }}
     >
       <ambientLight intensity={0.6} />
-      <CenterpieceShape />
       <ParticleField />
+      <SectionShapes />
       <Suspense fallback={null}>
         <PhotoCutout />
       </Suspense>

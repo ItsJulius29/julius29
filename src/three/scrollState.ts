@@ -4,5 +4,9 @@
 export const scrollState = {
   progress: 0,
   heroExit: 0,
+  // Visibilidad (0→1) de cada sección según qué tan cerca está su centro
+  // del centro del viewport — así cada figura 3D aparece/desaparece según
+  // la sección que estés mirando, sin importar si subes o bajas.
+  sections: {} as Record<string, number>,
   pointer: { x: 0, y: 0 },
 }
