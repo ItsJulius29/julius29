@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "skills": "Skills",
+    "education": "Education",
+    "contact": "Contact"
+  },
+  "hero": {
+    "cta": "View experience",
+    "scroll": "Scroll to explore"
+  },
+  "about": {
+    "title": "About me"
+  },
+  "experience": {
+    "title": "Professional experience"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "education": {
+    "title": "Education",
+    "pending": "Section under construction."
+  },
+  "contact": {
+    "title": "Contact",
+    "pending": "Contact details coming soon.",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}
