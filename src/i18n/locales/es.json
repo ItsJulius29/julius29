@@ -3,6 +3,7 @@
     "about": "Sobre mí",
     "experience": "Experiencia",
     "skills": "Habilidades",
+    "certifications": "Certificaciones",
     "education": "Educación",
     "contact": "Contacto"
   },
@@ -19,9 +20,12 @@
   "skills": {
     "title": "Habilidades"
   },
+  "certifications": {
+    "title": "Certificaciones"
+  },
   "education": {
     "title": "Educación",
-    "pending": "Sección en construcción."
+    "languages": "Idiomas"
   },
   "contact": {
     "title": "Contacto",

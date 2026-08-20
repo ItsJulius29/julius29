@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { profile } from "../data/content"
 
-const sections = ["about", "experience", "skills", "education", "contact"] as const
+const sections = ["about", "experience", "skills", "certifications", "education", "contact"] as const
 
 export default function Navbar() {
   const { t, i18n } = useTranslation()
