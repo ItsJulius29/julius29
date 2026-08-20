@@ -34,7 +34,7 @@ npm run deploy
 
 Esto construye el proyecto y publica `dist/` en la rama `gh-pages` (requiere el remoto de GitHub configurado y el paquete `gh-pages`, ya incluido). Luego, en el repo → Settings → Pages, la fuente debe ser la rama `gh-pages`.
 
-El repo se llama `Julius29` (project page), por eso `base: '/Julius29/'` en [vite.config.ts](vite.config.ts) y el sitio vive en `https://<tuusuario>.github.io/Julius29/`. Si en algún momento usas un dominio propio o un repo `<tuusuario>.github.io`, cambia `base` a `'/'`.
+El repo se llama `julius29` (project page), por eso `base: '/julius29/'` en [vite.config.ts](vite.config.ts) y el sitio vive en `https://itsjulius29.github.io/julius29/`. Si en algún momento usas un dominio propio o un repo `itsjulius29.github.io`, cambia `base` a `'/'`.
 
 Al comprar el dominio propio, solo se agrega un archivo `CNAME` en `public/` con el dominio, y se configura el DNS del proveedor.
 

@@ -152,8 +152,16 @@ export const experience: ExperienceGroup[] = [
   },
 ]
 
-// Experiencia previa, fuera del área tech.
+// Otra experiencia: fuera del stack actual, o sin más detalle disponible.
 export const otherExperience: { company: string; role: Bilingual; period: string }[] = [
+  {
+    company: "Outlier",
+    role: {
+      es: "Entrenamiento de modelos de IA — proyecto LATAM Covers",
+      en: "AI model training — LATAM Covers project",
+    },
+    period: "2024 — 2025",
+  },
   {
     company: "Bembos S.A.C.",
     role: { es: "Producción", en: "Production" },
