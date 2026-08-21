@@ -244,6 +244,17 @@ export const projects: Project[] = [
     repo: "https://github.com/ItsJulius29/subtrack",
     tags: ["React", "TypeScript", "TanStack Query", "Vitest", "Playwright", "Tailwind CSS"],
   },
+  {
+    title: "LitKit",
+    description: {
+      es: "Mini librería de Web Components con LitElement: botón, input, modal y toasts. Encapsulados en Shadow DOM, temables vía CSS custom properties, con accesibilidad real (foco atrapado, aria-live, aria-invalid).",
+      en: "Mini Web Components library built with LitElement: button, input, modal, and toasts. Encapsulated in Shadow DOM, themeable via CSS custom properties, with real accessibility (focus trapping, aria-live, aria-invalid).",
+    },
+    image: "projects/litkit.jpg",
+    link: "https://itsjulius29.github.io/litkit/",
+    repo: "https://github.com/ItsJulius29/litkit",
+    tags: ["Lit", "TypeScript", "Web Components", "Web Test Runner", "Playwright"],
+  },
 ]
 
 export type CertGroup = { category: Bilingual; items: string[] }
